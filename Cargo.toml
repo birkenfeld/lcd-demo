@@ -1,0 +1,17 @@
+[package]
+name = "demo"
+version = "0.1.0"
+authors = ["Georg Brandl <georg@python.org>"]
+edition = "2018"
+
+[profile.release]
+codegen-units = 1
+lto = true
+
+[dependencies]
+cortex-m = "0.7"
+cortex-m-rt = { version = "0.6", features = ["device"] }
+panic-halt = "0.2"
+embedded-hal = "0.2"
+stm32f1xx-hal = { version = "0.7", features = ["rt", "stm32f103", "medium"] }
+st7735-lcd = { version = "0.8", default-features = false }
